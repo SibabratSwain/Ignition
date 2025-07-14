@@ -622,6 +622,112 @@
           "text": " "
         },
         "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.navigate(url \u003d \u0027http://localhost:8088/pwa-test.html\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Alarm Icon_0"
+        },
+        "position": {
+          "basis": "26px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "../Alarms.custom.numAlarms"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0, \"Header/Alarm_Active\", \"Header/Icon\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "material/mobile_friendly"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "url": "http://localhost:8088/pwa-test.html"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "hasDelegate": true,
+          "name": "Alarms_0"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.size} \u003d \"large\""
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "../Alarms.custom.numAlarms"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0, \"Header/Alarm_Active\", \"Header/Icon\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "cursor": "pointer",
+            "marginLeft": "6px"
+          },
+          "text": "Instal"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "hasDelegate": true,
+          "name": "Spacer End_0"
+        },
+        "position": {
+          "basis": "16px",
+          "shrink": 0
+        },
+        "props": {
+          "text": " "
+        },
+        "type": "ia.display.label"
       }
     ],
     "meta": {
