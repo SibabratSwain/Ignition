@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Andon</title>
+
+    <meta name="theme-color" content="#317EFB" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" type="image/png" href="web/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="web/favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="web/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Andon" />
+    <link rel="manifest" href="manifest.json">
+
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1976d2;
+            margin-bottom: 20px;
+        }
+        .status {
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .warning { background: #fff3cd; color: #856404; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #1565c0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PWA Test Page</h1>
+        <p>This page tests the PWA configuration for Ignition Perspective.</p>
+        
+        <div id="status"></div>
+        
+        <h3>Test Actions</h3>
+        <button onclick="testServiceWorker()">Test Service Worker</button>
+        <button onclick="testManifest()">Test Manifest</button>
+        <button onclick="testInstallation()">Test Installation</button>
+        <button onclick="testNotifications()">Test Notifications</button>
+        <button onclick="redirectToApp()">GO TO APP</button>
+
+        <h3>PWA Features</h3>
+        <ul>
+            <li>✅ Manifest file</li>
+            <li>✅ Service worker</li>
+            <li>✅ Icons (various sizes)</li>
+            <li>✅ Offline page</li>
+            <li>✅ Install prompt</li>
+            <li>✅ Push notifications</li>
+        </ul>
+    </div>
+
+    <script src="pwa-init.js"></script>
+    <script>
+        const statusDiv = document.getElementById('status');
+        
+        function addStatus(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.textContent = message;
+            statusDiv.appendChild(div);
+        }
+        
+        function testServiceWorker() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations()
+                    .then(registrations => {
+                        if (registrations.length > 0) {
+                            addStatus('✅ Service worker is registered', 'success');
+                        } else {
+                            addStatus('❌ No service worker found', 'error');
+                        }
+                    });
+            } else {
+                addStatus('❌ Service workers not supported', 'error');
+            }
+        }
+        
+        function testManifest() {
+            fetch('manifest.json')
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Manifest not found');
+                })
+                .then(manifest => {
+                    addStatus('✅ Manifest loaded successfully', 'success');
+                    addStatus(`📱 App name: ${manifest.name}`, 'info');
+                })
+                .catch(error => {
+                    addStatus('❌ Manifest test failed: ' + error.message, 'error');
+                });
+        }
+        
+        function testInstallation() {
+            if (window.pwaManager && window.pwaManager.deferredPrompt) {
+                addStatus('✅ Install prompt available', 'success');
+            } else {
+                addStatus('⚠️ Install prompt not available (may need to meet criteria)', 'warning');
+            }
+        }
+        
+        function testNotifications() {
+            if ('Notification' in window) {
+                if (Notification.permission === 'granted') {
+                    addStatus('✅ Notifications enabled', 'success');
+                    new Notification('Test notification', {
+                        body: 'PWA notifications are working!',
+                        icon: '/web/icons/icon-192x192.png'
+                    });
+                } else if (Notification.permission === 'denied') {
+                    addStatus('❌ Notifications blocked', 'error');
+                } else {
+                    addStatus('⚠️ Notifications not requested yet', 'warning');
+                }
+            } else {
+                addStatus('❌ Notifications not supported', 'error');
+            }
+        }
+
+        function redirectToApp() {
+            window.location.href = '/data/perspective/client/PerspectiveWeb';
+        }
+        
+        // Auto-test on load
+        window.addEventListener('load', () => {
+            addStatus('🔍 Running PWA tests...', 'info');
+            setTimeout(() => {
+                testServiceWorker();
+                testManifest();
+                testInstallation();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
