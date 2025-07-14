@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>SQL Bridge</name>
+		<id>com.inductiveautomation.sqlbridge</id>
+		<version>10.1.48.2025042910</version>
+		<description>An OPC-to-SQL data logger and transaction manager.</description>
+		<requiredIgnitionVersion>8.1.34</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.factorysql.FactorySQLGatewayHook</hook>
+		<hook scope="D">com.inductiveautomation.factorysql.designer.FSQLDesignerModuleHook</hook>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="CDG">sql-bridge-common-10.1.48.jar</jar>
+		<jar scope="D">sql-bridge-designer-10.1.48.jar</jar>
+		<jar scope="G">sql-bridge-gateway-10.1.48.jar</jar>
+		<jar scope="G">web-10.1.48.jar</jar>
+	</module>
+</modules>

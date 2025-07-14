@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Legacy DNP3 Driver</name>
+		<id>com.inductiveautomation.opcua.drivers.dnp3</id>
+		<version>4.1.48.2025042910</version>
+		<description>A driver supporting DNP3 (Distributed Network Protocol) device.</description>
+		<requiredIgnitionVersion>8.1.46</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.xopc.drivers.dnp3.Dnp3GatewayHook</hook>
+		<hook scope="D">com.inductiveautomation.xopc.drivers.dnp3.designer.ModuleHook</hook>
+		<hook scope="C">com.inductiveautomation.xopc.drivers.dnp3.client.ModuleHook</hook>
+		<depends scope="G">com.inductiveautomation.opcua</depends>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="CD">dnp3-client-4.1.48.jar</jar>
+		<jar scope="CDG">dnp3-common-4.1.48.jar</jar>
+		<jar scope="D">dnp3-designer-4.1.48.jar</jar>
+		<jar scope="G">commons-csv-1.7.jar</jar>
+		<jar scope="G">dnp3-gateway-4.1.48.jar</jar>
+		<jar scope="G">dnp3-web-4.1.48.jar</jar>
+		<jar scope="G">dnp3-codec-4.1.48.jar</jar>
+		<jar scope="G">dnp3-core-4.1.48.jar</jar>
+		<jar scope="G">strict-machine-0.6.jar</jar>
+		<jar scope="G">netty-channel-fsm-0.8.jar</jar>
+		<jar scope="G">dnp3-master-4.1.48.jar</jar>
+	</module>
+</modules>

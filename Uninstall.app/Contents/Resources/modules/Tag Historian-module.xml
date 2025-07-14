@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Tag Historian</name>
+		<id>com.inductiveautomation.taghistorian</id>
+		<version>4.1.48.2025042910</version>
+		<description>Turns any database into a powerful historian that can store and drive data in Ignition.</description>
+		<requiredIgnitionVersion>8.1.33</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.gateway.tags.history.module.TagHistorianGatewayHook</hook>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="G">tag-historian-gateway-4.1.48.jar</jar>
+		<jar scope="G">web-4.1.48.jar</jar>
+	</module>
+</modules>

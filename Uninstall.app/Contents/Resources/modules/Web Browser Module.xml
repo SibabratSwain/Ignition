@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Web Browser</name>
+		<id>com.inductiveautomation.vision.web-browser</id>
+		<version>5.1.48.2025042910</version>
+		<description>Adds a web browser component to the Vision module.</description>
+		<requiredIgnitionVersion>8.1.46</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="C">com.inductiveautomation.webbrowser.BrowserClientHook</hook>
+		<hook scope="D">com.inductiveautomation.webbrowser.designer.DesignerHook</hook>
+		<depends scope="D">com.inductiveautomation.vision</depends>
+		<require scope="CD">jxbrowser</require>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="CD">webbrowser-client-5.1.48.jar</jar>
+		<jar scope="D">webbrowser-designer-5.1.48.jar</jar>
+	</module>
+</modules>

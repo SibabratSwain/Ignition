@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>SFC</name>
+		<id>com.inductiveautomation.sfc</id>
+		<version>5.1.48.2025042910</version>
+		<description>Sequential Function Charts are customizable logic execution environments.</description>
+		<requiredIgnitionVersion>8.1.34</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.sfc.SfcGatewayHookImpl</hook>
+		<hook scope="D">com.inductiveautomation.sfc.designer.SFCDesignerHook</hook>
+		<hook scope="C">com.inductiveautomation.sfc.client.SFCClientHook</hook>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="CD">sfc-client-5.1.48.jar</jar>
+		<jar scope="CDG">sfc-common-5.1.48.jar</jar>
+		<jar scope="D">sfc-designer-5.1.48.jar</jar>
+		<jar scope="G">sfc-gateway-5.1.48.jar</jar>
+		<jar scope="G">sfc-gateway-api-5.1.48.jar</jar>
+		<jar scope="G">web-5.1.48.jar</jar>
+	</module>
+</modules>

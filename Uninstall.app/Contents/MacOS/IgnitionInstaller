@@ -1,0 +1,110 @@
+#!/bin/bash
+DIR=$(cd "$( dirname "${BASH_SOURCE[0]}")" && pwd)
+
+CURRENT_USER=${CURRENT_USER:-${USER}}                   # User who will get ownership rights of the install
+
+USER_HOME_DIRECTORY=${USER_HOME_DIRECTORY:-${HOME}}     # The users home dir. Used for the log file
+
+SKIP_SCREEN_COMMAND=${SKIP_SCREEN_COMMAND:-0}           # We are calling the script from a screen instance,
+                                                        # don't make a new one
+                                                        # 1 - skip screen command, we are already in one
+                                                        # 0 - use screen command
+
+NO_SCREEN=${NO_SCREEN:-0}                               # User wants to use a .command file instead. Not ideal, but if
+                                                        # there are local limitations on screen we should allow it.
+                                                        # 1 - use .command file
+                                                        # 0 - use screen command
+
+RUN_AS_USER=${RUN_AS_USER:-${UID}}                      # The UID of the user. retained for after privilege escalation
+
+# need to get rid of this arg that gets added after the app signature is checked
+psn_arg="(-psn_.*)"
+if [[ "$1" =~ $psn_arg ]]; then
+    shift
+fi
+
+# case insensitive matching
+shopt -s nocasematch
+sys_arg_matcher="^-+.*"
+text_mode_matcher="unattended=text"
+text_interactive_matcher="textMode=true"
+text_mode=0
+
+sys_arg_index=0
+sys_arguments[sys_arg_index++]="-Djava.library.path=\\ " # JDK-8223377 - JavaFX 13
+sys_arguments[sys_arg_index++]="-Dignition.java.version=17.0.14 "
+sys_arguments[sys_arg_index++]="-Dignition.zipSize=1877276898 "
+
+sys_arguments[user_arg_index++]="-Duser.name=${CURRENT_USER}"
+sys_arguments[user_arg_index++]="-Duser.home=${USER_HOME_DIRECTORY// /%20}"
+
+user_arg_index=0
+user_arguments[user_arg_index++]="runningDirectory=${DIR// /%20}/.."
+user_arguments[user_arg_index++]="user=${CURRENT_USER}"
+user_arguments[user_arg_index++]="userHome=${USER_HOME_DIRECTORY// /%20}"
+
+if [[ ! -d "$DIR/../Resources/zip.lproj" ]]; then
+  user_arguments[user_arg_index++]="location=${DIR// /%20}/../../.."
+  user_arguments[user_arg_index++]="uninstall=true"
+fi
+
+# Argument Parsing
+for var in "$@"
+do
+    if [[ "$var" =~ $sys_arg_matcher ]]; then
+        sys_arguments[sys_arg_index++]="$var"
+    else
+        if [[ "$var" =~ $text_mode_matcher ]] || [[ "$var" =~ $text_interactive_matcher ]]; then
+          text_mode=1
+        fi
+        user_arguments[user_arg_index++]="$var"
+    fi
+done
+
+if [[ $text_mode == 1 ]] && [[ $SKIP_SCREEN_COMMAND == 0 ]]; then
+
+    if [[ $NO_SCREEN == 1 ]]; then
+      # Text Mode via .command file. This is not prefered, but available.
+      echo "sudo SKIP_SCREEN_COMMAND=1 CURRENT_USER=${CURRENT_USER} USER_HOME_DIRECTORY=${USER_HOME_DIRECTORY} \"$DIR/./IgnitionInstaller\" $@" > /tmp/ignition_install.command
+      chmod +x /tmp/ignition_install.command
+      open /tmp/ignition_install.command
+      sleep 5
+      rm /tmp/ignition_install.command
+    else
+      # Text Mode. Start a screen instance with this script running inside of it
+      echo "multiuser on" > /tmp/ignition_install.screenrc
+      echo "startup_message off" >> /tmp/ignition_install.screenrc
+      echo "acladd $CURRENT_USER" >> /tmp/ignition_install.screenrc
+      echo "setenv SKIP_SCREEN_COMMAND 1" >> /tmp/ignition_install.screenrc
+      echo "setenv CURRENT_USER ${CURRENT_USER}" >> /tmp/ignition_install.screenrc
+      echo "setenv USER_HOME_DIRECTORY ${USER_HOME_DIRECTORY}" >> /tmp/ignition_install.screenrc
+      RUN_AS_USER=${RUN_AS_USER} osascript "$DIR/../Resources/open_terminal.scpt" "\"${DIR}/./IgnitionInstaller\"" $@ &
+    fi
+
+else
+    # Elevate if GUI and not already done.
+    if [[ $text_mode == 0 ]] && [[ $UID != 0 ]]; then
+        RUN_AS_USER=${RUN_AS_USER} osascript "$DIR/../Resources/get_admin.scpt" "\"${DIR}/./IgnitionInstaller\"" $@ &
+        exit 0;
+    fi
+
+    if [[ $text_mode == 1 ]]; then
+        # We want word splitting
+        # shellcheck disable=SC2086
+        "$DIR/../Resources/linkedInstaller/bin/java" \
+        -Xdock:name="IgnitionInstaller" \
+        -Xdock:icon="${DIR}/../Resources/ignition.icns" \
+        ${sys_arguments[*]} \
+        -m com.inductiveautomation.ignition.installer.offline/com.inductiveautomation.ignition.installer.offline.OfflineInstaller \
+        ${user_arguments[*]} zipFile=zip.lproj/Ignition-macOs-x86-64-8.1.48.zip
+    else
+        # We want word splitting
+        # shellcheck disable=SC2086
+        sudo launchctl asuser "$RUN_AS_USER" "$DIR/../Resources/linkedInstaller/bin/java" \
+        -Xdock:name="IgnitionInstaller" \
+        -Xdock:icon="${DIR}/../Resources/ignition.icns" \
+        ${sys_arguments[*]} \
+        -m com.inductiveautomation.ignition.installer.offline/com.inductiveautomation.ignition.installer.offline.OfflineInstaller \
+        ${user_arguments[*]} zipFile=zip.lproj/Ignition-macOs-x86-64-8.1.48.zip
+    fi
+fi

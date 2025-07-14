@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>BACnet Driver</name>
+		<id>com.inductiveautomation.opcua.drivers.bacnet</id>
+		<version>2.1.48.2025042910</version>
+		<description>A driver for communicating with devices via BACnet.</description>
+		<requiredIgnitionVersion>8.1.46</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.ignition.drivers.bacnet.BacnetModuleHook</hook>
+		<depends scope="G">com.inductiveautomation.opcua</depends>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="G">model-2.1.48.jar</jar>
+		<jar scope="G">uanodeset-parser-0.4.0.jar</jar>
+		<jar scope="G">jaxb-runtime-2.3.2.jar</jar>
+		<jar scope="G">stax-ex-1.8.1.jar</jar>
+		<jar scope="G">jakarta.xml.bind-api-2.3.2.jar</jar>
+		<jar scope="G">txw2-2.3.2.jar</jar>
+		<jar scope="G">istack-commons-runtime-3.0.8.jar</jar>
+		<jar scope="G">FastInfoset-1.2.16.jar</jar>
+		<jar scope="G">jakarta.activation-api-1.2.1.jar</jar>
+		<jar scope="G">bacnet4j-6.0.1.jar</jar>
+		<jar scope="G">sero-scheduler-1.1.0.jar</jar>
+		<jar scope="G">sero-warp-1.0.0.jar</jar>
+		<jar scope="G">jssc-2.8.0.jar</jar>
+		<jar scope="G">driver-bacnet-2.1.48.jar</jar>
+	</module>
+</modules>

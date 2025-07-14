@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>OPC-UA</name>
+		<id>com.inductiveautomation.opcua</id>
+		<version>9.1.48.2025042910</version>
+		<description>Provides Ignition&apos;s OPC UA client and server functionality.</description>
+		<requiredIgnitionVersion>8.1.46</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="C">com.inductiveautomation.opcua.vision.client.ClientModuleHook</hook>
+		<hook scope="D">com.inductiveautomation.opcua.vision.client.DesignerModuleHook</hook>
+		<hook scope="G">com.inductiveautomation.ignition.gateway.opcua.OpcUaModuleHook</hook>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="CD">opc-ua-client-9.1.48.jar</jar>
+		<jar scope="CDG">opc-ua-common-9.1.48.jar</jar>
+		<jar scope="G">bsd-parser-gson-0.6.15.jar</jar>
+		<jar scope="G">sdk-client-0.6.15.jar</jar>
+		<jar scope="G">netty-channel-fsm-0.8.jar</jar>
+		<jar scope="G">bsd-parser-0.6.15.jar</jar>
+		<jar scope="G">gson-2.8.9.jar</jar>
+		<jar scope="G">stack-client-0.6.15.jar</jar>
+		<jar scope="G">strict-machine-0.6.jar</jar>
+		<jar scope="G">dictionary-reader-0.6.15.jar</jar>
+		<jar scope="G">opc-ua-gateway-9.1.48.jar</jar>
+		<jar scope="G">io-session-3.1.0.jar</jar>
+		<jar scope="G">sdk-server-0.6.15.jar</jar>
+		<jar scope="G">stack-server-0.6.15.jar</jar>
+		<jar scope="G">sdk-core-0.6.15.jar</jar>
+		<jar scope="G">bsd-generator-0.6.15.jar</jar>
+		<jar scope="G">bsd-core-0.6.15.jar</jar>
+		<jar scope="G">stack-core-0.6.15.jar</jar>
+		<jar scope="G">netty-codec-http-4.1.112.Final.jar</jar>
+		<jar scope="G">netty-handler-4.1.112.Final.jar</jar>
+		<jar scope="G">netty-codec-4.1.112.Final.jar</jar>
+		<jar scope="G">netty-transport-native-unix-common-4.1.112.Final.jar</jar>
+		<jar scope="G">netty-transport-4.1.112.Final.jar</jar>
+		<jar scope="G">netty-buffer-4.1.112.Final.jar</jar>
+		<jar scope="G">netty-resolver-4.1.112.Final.jar</jar>
+		<jar scope="G">netty-common-4.1.112.Final.jar</jar>
+		<jar scope="G">kotlinx-coroutines-jdk8-1.5.2.jar</jar>
+		<jar scope="G">kotlinx-coroutines-slf4j-1.5.2.jar</jar>
+		<jar scope="G">kotlinx-coroutines-core-jvm-1.5.2.jar</jar>
+		<jar scope="G">opc-ua-gateway-api-9.1.48.jar</jar>
+		<jar scope="G">web-api-9.1.48.jar</jar>
+		<jar scope="G">web-impl-9.1.48.jar</jar>
+	</module>
+</modules>

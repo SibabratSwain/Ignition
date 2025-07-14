@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleExecutable</key>
+	<string>IgnitionInstaller</string>
+	<key>CFBundleGetInfoString</key>
+	<string>IgnitionInstaller</string>
+	<key>CFBundleIconFile</key>
+	<string>ignition.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.inductiveautomation.ignition.installer.offline</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>IgnitionInstaller</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>IFMajorVersion</key>
+	<integer>0</integer>
+	<key>IFMinorVersion</key>
+	<integer>1</integer>
+	<key>IFPkgFlagAuthorizationAction</key>
+	<string>AdminAuthorization</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSSystemAdministrationUsageDescription</key>
+	<string>The Ignition installer must be allowed to install in the /usr directory if specified</string>
+</dict>
+</plist>

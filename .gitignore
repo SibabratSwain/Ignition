@@ -1,0 +1,56 @@
+
+# Project specific
+/lib/
+
+#Ignition specific
+**/ignition/*.log
+**/ignition/backups/*
+**/ignition/cache/*
+**/ignition/data/*
+**/ignition/logs/*
+**/ignition/tmp/*
+**/ignition/work/*
+**/ignition/security.pass
+**/ignition/license.slc
+**/ignition/.keystore
+**/ignition/.keystore.lock
+
+# IDE specific
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Build artifacts
+**/target/
+**/build/
+**/bin/
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Environment variables
+.env
+*.env.local
+*.env.*.local
+
+# Ignition module development
+**/build/
+**/dist/
+**/out/

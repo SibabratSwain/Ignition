@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Siemens Drivers</name>
+		<id>com.inductiveautomation.opcua.drivers.siemens</id>
+		<version>6.1.48.2025042910</version>
+		<description>Siemens S7-300, S7-400 and S7-1200 drivers.</description>
+		<requiredIgnitionVersion>8.1.46</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.xopc.drivers.siemens.S7ModuleHook</hook>
+		<depends scope="G">com.inductiveautomation.opcua</depends>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="G">driver-siemens-6.1.48.jar</jar>
+	</module>
+</modules>

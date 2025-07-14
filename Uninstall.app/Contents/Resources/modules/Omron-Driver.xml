@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Omron Driver</name>
+		<id>com.inductiveautomation.opcua.drivers.omron</id>
+		<version>4.1.48.2025042910</version>
+		<description>Drivers for Omron PLCs.</description>
+		<requiredIgnitionVersion>8.1.46</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.ignition.drivers.omron.OmronModuleHook</hook>
+		<depends scope="G">com.inductiveautomation.opcua</depends>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="G">fins-4.1.48.jar</jar>
+		<jar scope="G">cip-client-1.4.1.jar</jar>
+		<jar scope="G">commons-csv-1.7.jar</jar>
+		<jar scope="G">enip-client-1.4.1.jar</jar>
+		<jar scope="G">cip-core-1.4.1.jar</jar>
+		<jar scope="G">enip-core-1.4.1.jar</jar>
+		<jar scope="G">metrics-core-3.1.0.jar</jar>
+		<jar scope="G">omron-gateway-4.1.48.jar</jar>
+		<jar scope="G">omron-web-4.1.48.jar</jar>
+	</module>
+</modules>

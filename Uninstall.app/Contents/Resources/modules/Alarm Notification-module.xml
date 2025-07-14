@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Alarm Notification</name>
+		<id>com.inductiveautomation.alarm-notification</id>
+		<version>6.1.48.2025042910</version>
+		<description>Provides alarm notifications via email.</description>
+		<requiredIgnitionVersion>8.1.34</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.ignition.alarming.AlarmNotificationGatewayHook</hook>
+		<hook scope="C">com.inductiveautomation.ignition.alarming.client.ModuleHook</hook>
+		<hook scope="D">com.inductiveautomation.ignition.alarming.designer.DesignerHook</hook>
+		<requiredFrameworkVersion>8</requiredFrameworkVersion>
+		<jar scope="CD">alarm-notification-client-6.1.48.jar</jar>
+		<jar scope="CDG">alarm-notification-common-6.1.48.jar</jar>
+		<jar scope="D">alarm-notification-designer-6.1.48.jar</jar>
+		<jar scope="G">alarm-notification-gateway-6.1.48.jar</jar>
+		<jar scope="G">alarm-notification-gateway-api-6.1.48.jar</jar>
+		<jar scope="G">web-6.1.48.jar</jar>
+	</module>
+</modules>

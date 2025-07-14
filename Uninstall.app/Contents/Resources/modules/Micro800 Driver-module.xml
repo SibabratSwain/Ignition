@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Micro800 Driver</name>
+		<id>com.inductiveautomation.opcua.drivers.micro800</id>
+		<version>1.1.48.2025042910</version>
+		<description>A driver for communicating with Allen-Bradley Micro800 series PLCs.</description>
+		<requiredIgnitionVersion>8.1.46</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.ignition.drivers.micro800.Micro800ModuleHook</hook>
+		<depends scope="G">com.inductiveautomation.opcua</depends>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="G">cip-client-1.4.1.jar</jar>
+		<jar scope="G">logix-services-1.4.0.jar</jar>
+		<jar scope="G">commons-csv-1.7.jar</jar>
+		<jar scope="G">enip-client-1.4.1.jar</jar>
+		<jar scope="G">cip-core-1.4.1.jar</jar>
+		<jar scope="G">enip-core-1.4.1.jar</jar>
+		<jar scope="G">jsr305-3.0.0.jar</jar>
+		<jar scope="G">slf4j-api-1.7.32.jar</jar>
+		<jar scope="G">netty-channel-fsm-0.6.jar</jar>
+		<jar scope="G">metrics-core-3.1.0.jar</jar>
+		<jar scope="G">strict-machine-0.5.jar</jar>
+		<jar scope="G">kotlin-stdlib-jdk8-1.4.30.jar</jar>
+		<jar scope="G">kotlin-stdlib-jdk7-1.4.30.jar</jar>
+		<jar scope="G">kotlin-stdlib-1.4.30.jar</jar>
+		<jar scope="G">kotlin-stdlib-common-1.4.30.jar</jar>
+		<jar scope="G">annotations-13.0.jar</jar>
+		<jar scope="G">micro800-gateway-1.1.48.jar</jar>
+		<jar scope="G">micro800-web-1.1.48.jar</jar>
+	</module>
+</modules>

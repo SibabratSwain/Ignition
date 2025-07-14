@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>SMS Notification</name>
+		<id>com.inductiveautomation.sms-notification</id>
+		<version>6.1.48.2025042910</version>
+		<description>Adds SMS notifications to Alarming.</description>
+		<requiredIgnitionVersion>8.1.33</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.ignition.alarming.notification.sms.GatewayHook</hook>
+		<depends scope="G">com.inductiveautomation.alarm-notification</depends>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="G">libphonenumber-5.2.jar</jar>
+		<jar scope="G">alarm-notification-airlink-sms-6.1.48.jar</jar>
+	</module>
+</modules>

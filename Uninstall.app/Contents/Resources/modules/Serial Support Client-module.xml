@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Serial Support Client</name>
+		<id>com.inductiveautomation.serial-support-client</id>
+		<version>6.1.48.2025042910</version>
+		<description>Adds platform-level serial comm support and system.serial functions to client-scoped scripts.</description>
+		<requiredIgnitionVersion>8.1.33</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="C">com.inductiveautomation.ignition.modules.serial.SerialSupportClientHook</hook>
+		<hook scope="D">com.inductiveautomation.ignition.modules.serial.SerialSupportDesignerHook</hook>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="CD">serial-support-common-6.1.48.jar</jar>
+		<jar scope="CD">jSerialComm-2.6.2.jar</jar>
+		<jar scope="CD">serial-support-client-6.1.48.jar</jar>
+	</module>
+</modules>

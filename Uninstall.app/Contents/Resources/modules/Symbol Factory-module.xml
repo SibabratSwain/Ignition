@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Symbol Factory</name>
+		<id>com.inductiveautomation.symbol-factory</id>
+		<version>7.1.48.2025042910</version>
+		<description>Vector graphics clipart library.</description>
+		<requiredIgnitionVersion>8.1.33</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="D">com.inductiveautomation.symfact.designer.SymbolFactoryDesignerHook</hook>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="D">vision-symbol-factory-7.1.48.jar</jar>
+	</module>
+</modules>

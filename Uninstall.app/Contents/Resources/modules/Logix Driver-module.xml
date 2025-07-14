@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Logix Driver</name>
+		<id>com.inductiveautomation.opcua.drivers.logix</id>
+		<version>5.1.48.2025042910</version>
+		<description>A driver for communicating with Allen-Bradley Logix5000 series PLCs, and includes firmware version 21 support.</description>
+		<requiredIgnitionVersion>8.1.46</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.xopc.drivers.logix.LogixDriverHook</hook>
+		<depends scope="G">com.inductiveautomation.opcua</depends>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="G">cip-client-1.4.1.jar</jar>
+		<jar scope="G">logix-services-1.4.0.jar</jar>
+		<jar scope="G">enip-client-1.4.1.jar</jar>
+		<jar scope="G">cip-core-1.4.1.jar</jar>
+		<jar scope="G">enip-core-1.4.1.jar</jar>
+		<jar scope="G">jsr305-3.0.0.jar</jar>
+		<jar scope="G">slf4j-api-1.7.32.jar</jar>
+		<jar scope="G">metrics-core-3.1.0.jar</jar>
+		<jar scope="G">driver-logix-v21-5.1.48.jar</jar>
+	</module>
+</modules>

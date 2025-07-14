@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>WebDev</name>
+		<id>com.inductiveautomation.webdev</id>
+		<version>5.1.48.2025042910</version>
+		<description>Allows you to create and serve basic web resources and respond to web requests through scripting.</description>
+		<requiredIgnitionVersion>8.1.34</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="D">com.inductiveautomation.webdev.designer.DesignerHook</hook>
+		<hook scope="G">com.inductiveautomation.webdev.gateway.GatewayHook</hook>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="CDG">webdev-common-5.1.48.jar</jar>
+		<jar scope="D">webdev-designer-5.1.48.jar</jar>
+		<jar scope="G">webdev-gateway-5.1.48.jar</jar>
+	</module>
+</modules>

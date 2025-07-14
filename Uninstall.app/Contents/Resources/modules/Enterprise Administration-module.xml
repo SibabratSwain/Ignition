@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Enterprise Administration</name>
+		<id>com.inductiveautomation.eam</id>
+		<version>4.1.48.2025042910</version>
+		<description>A remote Gateway administration system, allowing you to manage Gateways and automate tasks from a single controller.</description>
+		<requiredIgnitionVersion>8.1.33</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.eam.gateway.module.EAMGatewayHook</hook>
+		<hook scope="D">com.inductiveautomation.eam.EAMDesignerModuleHook</hook>
+		<hook scope="C">com.inductiveautomation.eam.EAMClientModuleHook</hook>
+		<depends scope="G">com.inductiveautomation.perspective</depends>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="CD">eam-client-4.1.48.jar</jar>
+		<jar scope="CDG">eam-common-4.1.48.jar</jar>
+		<jar scope="D">eam-designer-4.1.48.jar</jar>
+		<jar scope="G">eam-gateway-4.1.48.jar</jar>
+		<jar scope="G">upgrade-assistant-4.1.48.jar</jar>
+		<jar scope="G">web-4.1.48.jar</jar>
+	</module>
+</modules>

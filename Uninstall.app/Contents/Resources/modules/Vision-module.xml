@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Vision</name>
+		<id>com.inductiveautomation.vision</id>
+		<version>11.1.48.2025042910</version>
+		<description>A module that provides web-launched HMI/SCADA clients.</description>
+		<requiredIgnitionVersion>8.1.37</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.factorypmi.gateway.VisionGatewayHook</hook>
+		<hook scope="D">com.inductiveautomation.factorypmi.designer.model.VisionDesignerImpl</hook>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="CD">vision-client-11.1.48.jar</jar>
+		<jar scope="CDG">vision-common-11.1.48.jar</jar>
+		<jar scope="D">vision-designer-11.1.48.jar</jar>
+		<jar scope="G">vision-gateway-11.1.48.jar</jar>
+		<jar scope="G">web-11.1.48.jar</jar>
+	</module>
+</modules>

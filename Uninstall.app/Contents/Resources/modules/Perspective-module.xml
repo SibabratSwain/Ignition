@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Perspective</name>
+		<id>com.inductiveautomation.perspective</id>
+		<version>2.1.48.2025042910</version>
+		<description>A module that provides modern, responsive html based graphical interfaces for Ignition projects.</description>
+		<requiredIgnitionVersion>8.1.37</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.perspective.gateway.GatewayHook</hook>
+		<hook scope="D">com.inductiveautomation.perspective.designer.DesignerHook</hook>
+		<require scope="D">jxbrowser</require>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="G">app-2.1.48.jar</jar>
+		<jar scope="G">perspective-themes-2.1.48.jar</jar>
+		<jar scope="G">perspective-icons-2.1.48.jar</jar>
+		<jar scope="G">perspective-gateway-2.1.48.jar</jar>
+		<jar scope="G">perspective-gateway-web-2.1.48.jar</jar>
+		<jar scope="DG">perspective-common-2.1.48.jar</jar>
+		<jar scope="D">perspective-designer-2.1.48.jar</jar>
+	</module>
+</modules>

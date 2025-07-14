@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<module>
+		<name>Serial Support Gateway</name>
+		<id>com.inductiveautomation.serial-support-gateway</id>
+		<version>6.1.48.2025042910</version>
+		<description>Adds platform-level serial comm support and system.serial functions to gateway-scoped scripts.</description>
+		<requiredIgnitionVersion>8.1.33</requiredIgnitionVersion>
+		<freeModule>false</freeModule>
+		<hook scope="G">com.inductiveautomation.ignition.modules.serial.SerialSupportGatewayHook</hook>
+		<requiredFrameworkVersion>7</requiredFrameworkVersion>
+		<jar scope="G">serial-support-common-6.1.48.jar</jar>
+		<jar scope="G">serial-support-gateway-6.1.48.jar</jar>
+	</module>
+</modules>
